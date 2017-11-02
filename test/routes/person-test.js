@@ -16,13 +16,6 @@ describe('Person', function(){
                     expect(res.body).to.be.a('array');
                     expect(res.body.length).to.equal(5);
                     var result = _.map(res.body, function(people){
-
-                        /*return {id: people.id,
-                            fname : people.fname,
-                            lname : people.lname,
-                            age : people.age,
-                            gender : people.gender,
-                            address : people.address}*/
                         return {_id: people._id,
                             address : people.address,
                             gender : people.gender,
@@ -40,4 +33,36 @@ describe('Person', function(){
                 });
         });
     });
-});
+
+    describe ('GET /people/:pid', function() {
+        it('should return one person in an array', function (done) {
+            chai.request(server)
+                .get('/people/59d2c6d998773510b8bebfbd')
+                .end(function (err, res) {
+                    expect(res).to.have.status(200);
+                    expect(res.body).to.be.a('array');
+                    expect(res.body.length).to.equal(1);
+                    var result = _.map(res.body, function (people) {
+                        return {
+                            _id: people._id,
+                            address: people.address,
+                            gender: people.gender,
+                            age: people.age,
+                            lname: people.lname,
+                            fname: people.fname
+                        }
+                    });
+                    expect(result).to.include({
+                        "_id": "59d2c6d998773510b8bebfbd",
+                        "address": "Ballybricken, Waterford",
+                        "gender": "male",
+                        "age": 46,
+                        "lname": "Hoing",
+                        "fname": "Matt"
+                    });
+                    done();
+                });
+        });
+    });
+
+                });
