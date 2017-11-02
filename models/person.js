@@ -5,7 +5,7 @@ var PersonSchema = new mongoose.Schema({
     lname : String,
     age : Number,
     gender : String,
-    address : String,
+    address : String
     //invited : char
 });
 

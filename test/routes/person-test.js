@@ -14,7 +14,7 @@ describe('Person', function(){
                 .end(function(err, res){
                     expect(res).to.have.status(200);
                     expect(res.body).to.be.a('array');
-                    expect(res.body.length).to.equal(5);
+                    expect(res.body.length).to.equal(8);
                     var result = _.map(res.body, function(people){
                         return {_id: people._id,
                             address : people.address,
@@ -64,5 +64,24 @@ describe('Person', function(){
                 });
         });
     });
-
+    describe('POST /people', function () {
+        it('should return confirmation message and update datastore', function(done) {
+            var person = {
+                fname : 'Daniel',
+                lname : 'Green',
+                age : 40,
+                gender : 'M',
+                address : 'England'
+            };
+            chai.request(server)
+                .post('/people')
+                .send(person)
+                .end(function(err, res) {
+                    expect(res).to.have.status(200);
+                    expect(res.body).to.have.property('message').equal('Person Added!' ) ;
+                    done();
                 });
+        });
+    });
+});
+

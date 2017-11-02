@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "test": "mocha test/routes/person-test.js"
+    "test": "mocha test/routes/person-test.js",
+    "test": "set NODE_ENV=test && mocha test/routes/person-test.js"
   },
   "dependencies": {
     "body-parser": "~1.17.1",
