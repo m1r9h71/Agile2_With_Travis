@@ -53,4 +53,36 @@ describe('Event', function() {
                 });
         });
     });
+
+    describe ('GET /events/:eid', function() {
+        it('should return one event in an array', function (done) {
+            chai.request(server)
+                .get('/events/' + testEvent._id)
+                .end(function (err, res) {
+                    expect(res).to.have.status(200);
+
+                    var result = _.map(res.body, function (events) {
+                        return {
+                            _id: testEvent._id,
+                            title : testEvent.title,
+                            description : testEvent.description,
+                            place : testEvent.place,
+                            startdate : testEvent.description,
+                            finishdate : testEvent.startdate,
+                            status : testEvent.finishdate
+                        }
+                    });
+                    expect(result).to.include({
+                        "_id": testEvent._id,
+                        "title" : testEvent.title,
+                        "description" : testEvent.description,
+                        "place" : testEvent.place,
+                        "startdate" : testEvent.description,
+                        "finishdate" : testEvent.startdate,
+                        "status" : testEvent.finishdate
+                    });
+                    done();
+                });
+        });
+    });
 });
