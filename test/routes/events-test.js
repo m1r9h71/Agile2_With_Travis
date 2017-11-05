@@ -77,12 +77,35 @@ describe('Event', function() {
                         "title" : testEvent.title,
                         "description" : testEvent.description,
                         "place" : testEvent.place,
-                        "startdate" : testEvent.description,
-                        "finishdate" : testEvent.startdate,
-                        "status" : testEvent.finishdate
+                        "startdate" : testEvent.startdate,
+                        "finishdate" : testEvent.finishdate,
+                        "status" : testEvent.status
                     });
                     done();
                 });
         });
     });
+
+    describe('PUT /events/:eid', function() {
+        it('should update the details of the event with the chosen id', function (done) {
+            var eventedit ={
+                title : 'editTitle',
+                description : 'editDescription',
+                place : 'editPlace',
+                startdate : 'editStart',
+                finishdate : 'editFin',
+                status : 'editStat'
+            };
+
+            chai.request(server)
+                .put('/events/59cc1782102ff512a46ea446')
+                .send(eventedit)
+                .end(function(err, res){
+                    expect(res).to.have.status(200);
+                    expect(res.body).to.have.property('message').equal('Event Updated!');
+                    done();
+                });
+        });
+    });
+
 });
