@@ -108,4 +108,28 @@ describe('Event', function() {
         });
     });
 
+    describe('DELETE /events/:eid ', function(){
+        it('should DELETE event with the chosen id', function(done){
+            var eventDelete = {
+                _id: testEvent._id,
+                title : testEvent.title,
+                description : testEvent.description,
+                place : testEvent.place,
+                startdate : testEvent.description,
+                finishdate : testEvent.startdate,
+                status : testEvent.finishdate
+            };
+            chai.request(server)
+
+                .delete('/events' +
+                    '/' + testEvent._id)
+                .end(function(err, res){
+                    expect(res).to.have.status(200);
+
+                    done();
+                });
+        });
+
+    });
+
 });
