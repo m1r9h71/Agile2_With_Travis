@@ -6,7 +6,7 @@ var PersonSchema = new mongoose.Schema({
     age : Number,
     gender : String,
     address : String
-    //invited : char
+
 });
 
 module.exports=mongoose.model('Person', PersonSchema);
