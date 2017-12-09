@@ -1,12 +1,17 @@
 {
     "env": {
         "node": true,
-        "mocha": true
+        "mocha": true,
+        "browser": true
     },
     "plugins":[
         "json"],
+    "globals": {
+        "angular": true
+    },
     "extends": "eslint:recommended",
     "rules": {
+        "no-console": "off",
         "indent": [
             "error",
             4
