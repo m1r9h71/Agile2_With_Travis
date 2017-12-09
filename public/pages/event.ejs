@@ -1,0 +1,64 @@
+<div class="jumbotron text-center">
+    <h1>Add an Event</h1>
+
+    <p>{{ message }}</p>
+
+    <div ng-controller="eventController">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+
+                <form ng-submit="addEvent()"
+                      style="margin-top:30px;">
+                    <h3>Add a new Event</h3>
+
+                    <div class="form-group" align="center">
+                        <input type="String"
+                               class="form-control"
+                               placeholder="Title"
+                               ng-model="formData.title"
+                               ng-style="{'width': 300 + 'px'}"></input>
+                    </div>
+
+                    <div class="form-group" align="center">
+                        <input type="String"
+                               class="form-control"
+                               placeholder="Description"
+                               ng-model="formData.description"
+                               ng-style="{'width': 300 + 'px'}"></input>
+                    </div>
+
+                    <div class="form-group" align="center">
+                        <input type="String"
+                               class="form-control"
+                               placeholder="Place"
+                               ng-model="formData.place"
+                               ng-style="{'width': 300 + 'px'}"></input>
+                    </div>
+                    <div class="form-group" align="center">
+                        <input type="Date"
+                               class="form-control"
+                               placeholder="Start Date"
+                               ng-model="formData.startdate"
+                               ng-style="{'width': 300 + 'px'}"></input>
+                    </div>
+                    <div class="form-group" align="center">
+                        <input type="Date"
+                               class="form-control"
+                               placeholder="Finish Date"
+                               ng-model="formData.finishdate"
+                               ng-style="{'width': 300 + 'px'}"></input>
+                    </div>
+                    <div class="form-group" align="center">
+                        <input type="String"
+                               class="form-control"
+                               placeholder="status"
+                               ng-model="formData.status"
+                               ng-style="{'width': 300 + 'px'}"></input>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Add Event</button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,60 @@
+
+<div class="jumbotron text-center">
+    <h1>List All People</h1>
+
+    <p>{{ message }}</p>
+
+    <div ng-controller="peopleController as list">
+        <table class ="table table-striped table-bordered align="center" valign="left">
+
+        <thead>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Age</th>
+        <th>Gender</th>
+        <th>Address</th>
+        <th>Edit/Delete</th>
+
+        </thead>
+        <tbody>
+        <tr ng-repeat="person in people" ng-include="getTemplate(person)">
+            <script type="text/ng-template" id="display">
+
+
+                <td>{{person.fname}}</td>
+                <td>{{person.lname}}</td>
+                <td>{{person.age}}</td>
+                <td>{{person.gender}}</td>
+                <td>{{person.address}}</td>
+                <td>
+                    <button type="button" class="btn btn-default" ng-click="editPerson(person)">
+                        <span class="glyphicon glyphicon-edit"></span> Edit
+                    </button>
+                    <button type="button" class="btn btn-default" ng-click="delete(person._id)">
+                        <span class="glyphicon glyphicon-remove"></span> Remove
+                    </button>
+
+                </td>
+            </script>
+            <script type="text/ng-template" id="edit">
+                <td><input type="text" ng-model=person.fname class="form-control input-sm"></input></td>
+                <td><input type="text" ng-model=person.lname class="form-control input-sm"></input></td>
+                <td><input type="text" ng-model=person.age class="form-control input-sm"></input></td>
+                <td><input type="text" ng-model=person.gender class="form-control input-sm"></input></td>
+                <td><input type="text" ng-model=person.address class="form-control input-sm"></input></td>
+
+
+
+                <td>
+                    <button type="button" class="btn btn-primary" ng-click="updatePerson(person)">Save</button>
+                    <button type="button" class="btn btn-danger" ng-click="reset()">Cancel</button>
+                </td>
+            </script>
+        </tr>
+
+        </tbody>
+        </table>
+
+    </div>
+
+</div>

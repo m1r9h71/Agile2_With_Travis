@@ -40,8 +40,11 @@ router.findOne = function(req, res){
     });
 }
 
-router.addEvent = function(req, res){
+router.addEvent = function(req, res, err){
     //Adds a new Event
+	/*if(req.body.value === null || req.body.value === "" || err){
+		res.json({message : "Invalid Input, Please review the information entered!"});
+	}else {*/
 var event = new Events();
 //event.eid=req.body.eid;
 event.title=req.body.title;
@@ -60,7 +63,7 @@ console.log('Adding event: ' +JSON.stringify(event));
 
         res.json({message: 'Event Added!', data: event});
     });
-
+	//}
 }
 
 router.deleteEvent = function(req, res){

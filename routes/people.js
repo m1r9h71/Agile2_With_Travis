@@ -37,26 +37,30 @@ router.findOnePerson = function(req, res){
 }
 
 //Add a new person
-router.addPerson = function(req, res){
+router.addPerson = function(req, res, err){
     //Adds a new Person
-    var person = new People();
-    person.fname=req.body.fname;
-    person.lname=req.body.lname;
-    person.age=req.body.age;
-    person.gender=req.body.gender;
-    person.address=req.body.address;
+   /* if(req.body.value === null || req.body.value === "" || err){
+        res.json({message : "Invalid Input, Please review the information entered!"});
+        res.send(err);
+    }else {*/
+        var person = new People();
+        person.fname = req.body.fname;
+        person.lname = req.body.lname;
+        person.age = req.body.age;
+        person.gender = req.body.gender;
+        person.address = req.body.address;
 
 
-    console.log('Adding person: ' +JSON.stringify(person));
+        console.log('Adding person: ' + JSON.stringify(person));
 
 //SAve the person and check for any errors
-    person.save(function(err){
-        if(err)
-            res.send(err);
+        person.save(function (err) {
+            if (err)
+                res.send(err);
 
-        res.json({message: 'Person Added!', data: person});
-    });
-
+            res.json({message: 'Person Added!', data: person});
+        });
+   // }
 }
 
 //Delete a person based on the ID entered
