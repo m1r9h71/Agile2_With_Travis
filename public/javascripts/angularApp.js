@@ -22,10 +22,10 @@ app.config(function($routeProvider) {
         })
 
     //route for person page
-    .when('/person', {
-        templateUrl : 'pages/person.ejs',
-        controller : 'personController'
-    })
+        .when('/person', {
+            templateUrl : 'pages/person.ejs',
+            controller : 'personController'
+        })
 
     //route for people page
         .when('/people', {
@@ -34,10 +34,10 @@ app.config(function($routeProvider) {
         })
 
     //route for add person to event page
-    .when('/personevent', {
-        templateUrl : 'pages/personevent.ejs',
-        controller : 'personEventController'
-    });
+        .when('/personevent', {
+            templateUrl : 'pages/personevent.ejs',
+            controller : 'personEventController'
+        });
 });
 
 

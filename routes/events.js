@@ -23,58 +23,58 @@ router.findAll = function(req, res){
 
         res.json(events);
     });
-}
+};
 
 router.findOne = function(req, res){
-   //Use the Events model to find a single event
+    //Use the Events model to find a single event
     if (!req.params){
         return res.status(400).json({message: 'no information entered'});
     }/*if(!req.params.id || id.NaN(req.params._id)){
         return res.status(400).send({message: 'id must be a number'});
     }*/
-    Events.find({"_id": req.params.eid}, function(err, event){
+    Events.find({'_id': req.params.eid}, function(err, event){
         if(err)
-            res.json({message: "Event NOT found, please review your information!"});
+            res.json({message: 'Event NOT found, please review your information!'});
         else
             res.json(event);
     });
-}
+};
 
 router.addEvent = function(req, res, err){
     //Adds a new Event
-	/*if(req.body.value === null || req.body.value === "" || err){
+    /*if(req.body.value === null || req.body.value === "" || err){
 		res.json({message : "Invalid Input, Please review the information entered!"});
 	}else {*/
-var event = new Events();
-//event.eid=req.body.eid;
-event.title=req.body.title;
-event.description=req.body.description;
-event.place=req.body.place;
-event.startdate=req.body.startdate;
-event.finishdate=req.body.finishdate;
-event.status=req.body.status;
+    var event = new Events();
+    //event.eid=req.body.eid;
+    event.title=req.body.title;
+    event.description=req.body.description;
+    event.place=req.body.place;
+    event.startdate=req.body.startdate;
+    event.finishdate=req.body.finishdate;
+    event.status=req.body.status;
 
-console.log('Adding event: ' +JSON.stringify(event));
+    console.log('Adding event: ' +JSON.stringify(event));
 
-//SAve the event and check for any errors
+    //SAve the event and check for any errors
     event.save(function(err){
         if(err)
             res.send(err);
 
         res.json({message: 'Event Added!', data: event});
     });
-	//}
-}
+    //}
+};
 
 router.deleteEvent = function(req, res){
     //Delete the selected event from the id entered by the user
-   Events.findByIdAndRemove(req.params.id, function(err){
-       if(err)
-           res.send(err);
-       else
-           res.json({message: "Event Deleted!"});
-   });
-}
+    Events.findByIdAndRemove(req.params.id, function(err){
+        if(err)
+            res.send(err);
+        else
+            res.json({message: 'Event Deleted!'});
+    });
+};
 
 
 router.editEventStatus = function(req, res){
@@ -85,7 +85,7 @@ router.editEventStatus = function(req, res){
         else
             res.json({message: 'Event Status Updated!', data: event});
     });
-}
+};
 
 router.editEvent = function(req, res){
     Events.findByIdAndUpdate(req.params.eid, {$set: {title: req.body.title, description: req.body.description, place: req.body.place,
@@ -96,7 +96,7 @@ router.editEvent = function(req, res){
         else
             res.json({message: 'Event Updated!', data: event});
     });
-}
+};
 
 //{"_id":0,"status":"c","finishdate":"27/09/2017","startdate":"27/09/2017","place":"My Office","description":"Giving myself a migraine trying to get a bloody edit to work!!!","title":"NOT AGAIN"}
 

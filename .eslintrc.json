@@ -1,7 +1,10 @@
 {
     "env": {
-        "node": true
+        "node": true,
+        "mocha": true
     },
+    "plugins":[
+        "json"],
     "extends": "eslint:recommended",
     "rules": {
         "indent": [

@@ -15,8 +15,8 @@ app.controller('personController', ['$scope', '$location', '$http', function($sc
         { ages: 42, id: 26 }, { ages: 43, id: 27 }, { ages: 44, id: 28 }, { ages: 45, id: 29 }, { ages: 46, id: 30 }, { ages: 47, id: 31 },
         { ages: 48, id: 32 }, { ages: 49, id: 33 }, { ages: 50, id: 34 }];
     $scope.formData.ageOptions = $scope.option[0];
-   $scope.options = [{genders: "Female", id:0}, {genders: "Male", id:1}];
-   $scope.formData.genderOptions = $scope.options[0];
+    $scope.options = [{genders: 'Female', id:0}, {genders: 'Male', id:1}];
+    $scope.formData.genderOptions = $scope.options[0];
     $scope.address = String;
 
 

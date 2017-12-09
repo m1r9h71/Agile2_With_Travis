@@ -14,7 +14,7 @@ app.controller('peopleController', ['$scope', '$http', function ($scope, $http) 
         }).error(function (data) {
             console.log('Error: ' + data);
         });
-    };
+    }
 
 
     $scope.getTemplate = function (person) {
@@ -25,10 +25,10 @@ app.controller('peopleController', ['$scope', '$http', function ($scope, $http) 
         }
     };
     $scope.reset = function () {
-        $scope.selected = {}
+        $scope.selected = {};
     };
     $scope.editPerson = function (person) {
-        console.log(JSON.stringify(person))
+        console.log(JSON.stringify(person));
         $scope.selected = angular.copy(person);
     };
 
@@ -48,7 +48,7 @@ app.controller('peopleController', ['$scope', '$http', function ($scope, $http) 
         });
     };
     $scope.delete    = function (id) {
-        if (confirm("Are you sure you want to delete this Person?")) {
+        if (confirm('Are you sure you want to delete this Person?')) {
             console.log('Deleting id :' + id);
         }
         $http.delete('/people/' + id).success(function (data) {

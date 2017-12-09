@@ -11,7 +11,7 @@ app.controller('eventController', ['$scope', '$location', '$http', function($sco
     $scope.startdate = Date.now();
     $scope.finishdate = Date.now();
     $scope.status = String;
-    $scope.options = [{ status: "Open", id: 0 }, { status: "Closed", id: 1 }];
+    $scope.options = [{ status: 'Open', id: 0 }, { status: 'Closed', id: 1 }];
     $scope.formData.statusOptions = $scope.options[0];
 
 

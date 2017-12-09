@@ -14,7 +14,7 @@ app.controller('eventsController', ['$scope', '$http', function ($scope, $http) 
         }).error(function (data) {
             console.log('Error: ' + data);
         });
-    };
+    }
 
 
     $scope.getTemplate = function (event) {
@@ -25,10 +25,10 @@ app.controller('eventsController', ['$scope', '$http', function ($scope, $http) 
         }
     };
     $scope.reset = function () {
-        $scope.selected = {}
+        $scope.selected = {};
     };
     $scope.editEvent = function (event) {
-        console.log(JSON.stringify(event))
+        console.log(JSON.stringify(event));
         $scope.selected = angular.copy(event);
     };
 
@@ -48,7 +48,7 @@ app.controller('eventsController', ['$scope', '$http', function ($scope, $http) 
         });
     };
     $scope.delete    = function (id) {
-        if (confirm("Are you sure you want to delete this Event?")) {
+        if (confirm('Are you sure you want to delete this Event?')) {
             console.log('Deleting id :' + id);
         }
         $http.delete('/events/' + id).success(function (data) {
