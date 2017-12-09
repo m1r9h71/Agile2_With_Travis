@@ -5,37 +5,37 @@ app.config(function($routeProvider) {
 
     // route for the home page
         .when('/', {
-            templateUrl : 'pages/home.ejs',
+            templateUrl : 'public/pages/home.ejs',
             controller  : 'mainController'
         })
 
         // route for the donate page
         .when('/event', {
-            templateUrl : 'pages/event.ejs',
+            templateUrl : 'public/pages/event.ejs',
             controller  : 'eventController'
         })
 
         // route for the donations page
         .when('/events', {
-            templateUrl : 'pages/events.ejs',
+            templateUrl : 'public/pages/events.ejs',
             controller  : 'eventsController'
         })
 
     //route for person page
         .when('/person', {
-            templateUrl : 'pages/person.ejs',
+            templateUrl : 'public/pages/person.ejs',
             controller : 'personController'
         })
 
     //route for people page
         .when('/people', {
-            templateUrl : 'pages/people.ejs',
+            templateUrl : 'public/pages/people.ejs',
             controller : 'peopleController'
         })
 
     //route for add person to event page
         .when('/personevent', {
-            templateUrl : 'pages/personevent.ejs',
+            templateUrl : 'public/pages/personevent.ejs',
             controller : 'personEventController'
         });
 });
