@@ -1,0 +1,46 @@
+<html ng-app="Web App 70% Assignment" >
+<head>
+  <title>Marguerite Event Management</title>
+  
+  </head>
+
+<body ng-controller="mainController">
+<!-- NAVBAR -->
+
+<nav class="navbar navbar-inverse navbar-static-top" role="navigation" style="background-color: darkblue;">
+  <div class="container">
+    <div class="navbar-header" >
+      <a class="navbar-brand" href="#/" style="color: lightskyblue;"><i></i> Marguerite Event Management</a>
+    </div>
+
+    <ul class="nav navbar-nav navbar-right ">
+      <div class="navbar-right">
+        <button type="button" class="btn btn-default navbar-btn btn-success">Register</button>
+        <button type="button" class="btn btn-default navbar-btn btn-primary">Log In</button>
+      </div>
+      <li><a href="#/" style="color: lightskyblue;"><i class="fa fa-home" ></i> Home </a></li>
+      <li><a href="#event" style="color: lightskyblue;"><i class="fa fa-add" ></i> Add Event</a></li>
+      <li><a href="#events" style="color: lightskyblue;"><i class="fa fa-list"></i> View All Events</a></li>
+
+      <li><a href="#person" style="color: lightskyblue;"><i class="fa fa-add-person"></i>Add Person</a></li>
+      <li><a href="#people" style="color: lightskyblue;"><i class="fa fa-list"></i>List People</a></li>
+
+    </ul>
+
+  </div>
+</nav>
+
+
+<!-- MAIN CONTENT AND INJECTED VIEWS -->
+<div id="main">
+
+  <div ng-view></div>
+
+</div> <!-- End of main div -->
+<footer class="text-center">
+  <p>This is a Web App For SSD Year 4</p>
+  <li><a href="#about"><i class="fa fa-info"></i> About</a></li>
+  <li><a href="#contact"><i class="fa fa-comment"></i> Contact</a></li>
+</footer>
+</body>
+</html>

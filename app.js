@@ -25,7 +25,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 //app.use(express.static(path.join(__dirname, 'public')));
-app.use(express.static(path.join(__dirname, '')));
+app.use(express.static(path.join(__dirname, 'build')));
+app.use('/public', express.static(__dirname + '/public'));
 app.use('/', index);
 app.use('/users', users);
 //Events Routes
