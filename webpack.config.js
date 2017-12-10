@@ -19,7 +19,19 @@ module.exports = {
         loaders: [
             { test: /\.js$/, 
                 exclude: /node_modules/,
-                loader: 'babel-loader'}
+                loader: 'babel-loader'},
+            {
+                test: /\.css$/,
+                loader: 'style!css?sourceMap'
+            },
+            {
+                test: /\.(svg|png|jpe?g|gif)(\?\S*)?$/, 
+                loader: 'url?limit=100000&name=img/[name].[ext]'
+            },
+            {
+                test: /\.(eot|woff|woff2|ttf)(\?\S*)?$/, 
+                loader: 'url?limit=100000&name=fonts/[name].[ext]'
+            }  
         ]
     }
 };
