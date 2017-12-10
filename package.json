@@ -5,6 +5,8 @@
   "scripts": {
     "start": "webpack --config webpack.config.js",
     "test": "set NODE_ENV=test && mocha test/routes/person-test.js mocha test/routes/events-test.js",
+    "start-prod": "NODE_ENV=prod node bin/www",
+    "build-prod": "webpack --config webpack-prod.config.js",
     "build": "webpack"
   },
   "dependencies": {

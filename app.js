@@ -1,3 +1,5 @@
+var prod =  process.env.NODE_ENV === 'prod';
+
 /*eslint no-unused-vars: "off" */
 var express = require('express');
 var path = require('path');
@@ -25,7 +27,11 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 //app.use(express.static(path.join(__dirname, 'public')));
-app.use(express.static(path.join(__dirname, 'build')));
+if (prod) {
+    app.use(express.static(path.join(__dirname, 'dist')));
+} else {
+    app.use(express.static(path.join(__dirname, 'build')));
+}
 app.use('/public', express.static(__dirname + '/public'));
 app.use('/', index);
 app.use('/users', users);

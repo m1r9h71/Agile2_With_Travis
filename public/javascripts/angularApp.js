@@ -8,7 +8,7 @@ var app = angular.module('Web App 70% Assignment', ['ngRoute']);
 require('./controllers/index');
 
 
-app.config(function($routeProvider) {
+app.config(['$routeProvider', function($routeProvider) { 
     $routeProvider
 
     // route for the home page
@@ -46,7 +46,7 @@ app.config(function($routeProvider) {
             templateUrl : 'public/pages/personevent.ejs',
             controller : 'personEventController'
         });
-});
+}]);
 
 
 
