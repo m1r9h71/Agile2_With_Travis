@@ -1,4 +1,9 @@
+require('angular');
+require('angular-route');
+
 var app = angular.module('Web App 70% Assignment', ['ngRoute']);
+require('./controllers/index');
+
 
 app.config(function($routeProvider) {
     $routeProvider

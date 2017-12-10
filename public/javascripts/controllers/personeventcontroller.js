@@ -1,3 +1,4 @@
+/*eslint-disable-no-unused-vars */
 var app = angular.module('Web App 70% Assignment');
 
 app.controller('eventsController', ['$scope', '$http', 'peopleController', function ($scope, $http, peopleController) {

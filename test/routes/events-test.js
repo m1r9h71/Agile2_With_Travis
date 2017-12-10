@@ -1,3 +1,4 @@
+/*eslint-disable-no-unused-vars */
 var chai = require('chai');
 var chaiHttp = require('chai-http');
 var server = require('../../bin/www');
@@ -6,6 +7,7 @@ var expect = chai.expect;
 chai.use(chaiHttp);
 var _ = require('lodash');
 chai.use(require('chai-things'));
+//eslint-disable-next-line no-unused-vars
 var itemId;
 var testEvent = {
 
@@ -37,6 +39,7 @@ describe('Event', function() {
                 .end(function(err, res){
                     expect(res).to.have.status(200);
                     expect(res.body).to.be.a('array');
+                    //eslint-disable-next-line no-unused-vars
                     var result = _.map(res.body, function(events){
                         return {_id: events._id,
                             title : events.title,
@@ -60,7 +63,7 @@ describe('Event', function() {
                 .get('/events/' + testEvent._id)
                 .end(function (err, res) {
                     expect(res).to.have.status(200);
-
+                    //eslint-disable-next-line no-unused-vars
                     var result = _.map(res.body, function (events) {
                         return {
                             _id: testEvent._id,
@@ -110,6 +113,7 @@ describe('Event', function() {
 
     describe('DELETE /events/:eid ', function(){
         it('should DELETE event with the chosen id', function(done){
+            //eslint-disable-next-line no-unused-vars
             var eventDelete = {
                 _id: testEvent._id,
                 title : testEvent.title,

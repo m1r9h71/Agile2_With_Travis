@@ -1,6 +1,6 @@
-var app = angular.module('Web App 70% Assignment');
-
-app.controller('peopleController', ['$scope', '$http', function ($scope, $http) {
+//var app = angular.module('Web App 70% Assignment');
+/*eslint-disable-no-unused-vars */
+function peopleController($scope, $http) {
     // create a message to display in our view
     $scope.message = 'Person Page!';
     $scope.selected = {};
@@ -58,4 +58,5 @@ app.controller('peopleController', ['$scope', '$http', function ($scope, $http) 
             console.log('Error: ' + data);
         });
     };
-}]);
+}
+module.exports = peopleController;

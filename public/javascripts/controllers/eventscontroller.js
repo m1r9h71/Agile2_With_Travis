@@ -1,6 +1,6 @@
-var app = angular.module('Web App 70% Assignment');
-
-app.controller('eventsController', ['$scope', '$http', function ($scope, $http) {
+//var app = angular.module('Web App 70% Assignment');
+/*eslint-disable-no-unused-vars */
+function eventsController($scope, $http) {
     // create a message to display in our view
     $scope.message = 'Events Page!';
     $scope.selected = {};
@@ -58,4 +58,5 @@ app.controller('eventsController', ['$scope', '$http', function ($scope, $http) 
             console.log('Error: ' + data);
         });
     };
-}]);
+}
+module.exports = eventsController;

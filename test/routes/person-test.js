@@ -1,3 +1,4 @@
+/*eslint-disable-no-unused-vars */
 var chai = require('chai');
 var chaiHttp = require('chai-http');
 var server = require('../../bin/www');
@@ -6,6 +7,7 @@ var expect = chai.expect;
 chai.use(chaiHttp);
 var _ = require('lodash' );
 chai.use(require('chai-things'));
+// eslint-disable-next-line no-unused-vars
 var itemId;
 var testperson =  {
     fname: 'TestFName',
@@ -49,6 +51,7 @@ describe('Person', function(){
                     expect(res.body).to.be.a('array');
                     //the following line has an issue, the array is being added to each time...
                     // expect(res.body.length).to.equal(8);
+                    //eslint-disable-next-line no-unused-vars
                     var result = _.map(res.body, function(people){
                         return {_id: people._id,
                             address : people.address,
@@ -77,6 +80,7 @@ describe('Person', function(){
                     expect(res).to.have.status(200);
                     // expect(res.body).to.be.a('array');
                     //expect(res.body.length).to.equal(1);
+                    //eslint-disable-next-line no-unused-vars
                     var result = _.map(res.body, function (people) {
                         return {
                             _id: testperson._id,
@@ -125,6 +129,7 @@ describe('Person', function(){
 
     describe('DELETE /people/:pid ', function(){
         it('should DELETE person with the chosen id', function(done){
+            //eslint-disable-next-line no-unused-vars
             var personDelete = {
                 '_id': testperson._id,
                 fname: testperson.fname,

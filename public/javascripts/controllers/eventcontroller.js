@@ -1,6 +1,6 @@
-var app = angular.module('Web App 70% Assignment');
-
-app.controller('eventController', ['$scope', '$location', '$http', function($scope, $location, $http) {
+//var app = angular.module('Web App 70% Assignment');
+/*eslint-disable-no-unused-vars */
+function eventController($scope, $location, $http) {
 
     $scope.formData = {};
 
@@ -30,4 +30,5 @@ app.controller('eventController', ['$scope', '$location', '$http', function($sco
     };
 }
 
-]);
+
+module.exports = eventController;
