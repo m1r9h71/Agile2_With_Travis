@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "webpack --config webpack.config.js",
-    "test": "NODE_ENV=test mocha",
+    "start": "npm-run-all test build:dev server",
+    "test": "cross-env NODE_ENV=test && mocha test/routes/person-test.js",
     "start-prod": "NODE_ENV=prod node bin/www",
     "server": "node bin/www",
     "build:prod": "webpack --config webpack-prod.config.js",
