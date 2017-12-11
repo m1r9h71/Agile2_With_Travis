@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "npm-run-all test build:dev server",
-    "test": "cross-env NODE_ENV=test && mocha test/routes/person-test.js",
+    //"test": "cross-env NODE_ENV=test && mocha test/routes/person-test.js",
     "start-prod": "NODE_ENV=prod node bin/www",
     "server": "nodemon bin/www", 
     "build:prod": "webpack --config webpack-prod.config.js",
