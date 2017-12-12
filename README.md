@@ -41,6 +41,14 @@ npm test
 npm run server
 npm build:dev
 npm run build:watch
+./node_modules/.bin/webpack - builds the babel core config
+node bin/www - runs the server
+npm run build - rebuilds the bundle
+npm run build-prod - builds the app for production
+npm run start-prod - starts server in production mode
+npm start - runs three scripts in sequence
+npm run coverage - runs coverage tests locally
+mocha test/acceptance - runs the acceptance tests
 
 
 ## Acceptance Testing.
