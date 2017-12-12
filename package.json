@@ -7,6 +7,7 @@
     "test": "cross-env NODE_ENV=test PORT=4000 mocha test/routes/events-test.js test/routes/person-test.js",
     "coverage": "cross-env NODE_ENV=test PORT=4000 istanbul cover _mocha -- test/routes/*-test.js",
     "report-coverage": "cat ./coverage/lcov.info | coveralls",
+    "check-coverage": "istanbul check-coverage --statements 70 --branches 40 --functions 40 --lines 70",
     "start-prod": "NODE_ENV=prod PORT=4000 node bin/www",
     "server": "nodemon bin/www",
     "build:prod": "webpack --config webpack-prod.config.js",
