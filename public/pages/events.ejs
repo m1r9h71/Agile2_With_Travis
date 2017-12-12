@@ -1,5 +1,5 @@
 
-<div class="jumbotron text-center">
+<div id = "events" class="jumbotron text-center">
     <h1>List All Events</h1>
 
     <p>{{ message }}</p>
@@ -22,12 +22,12 @@
             <script type="text/ng-template" id="display">
 
 
-                <td>{{event.title}}</td>
-                <td>{{event.description}}</td>
-                <td>{{event.place}}</td>
-                <td>{{event.startdate | date:'yyyy-MM-dd'}}</td>
-                <td>{{event.finishdate | date:'yyyy-MM-dd'}}</td>
-                <td>{{event.status}}</td>
+                <td name="title">{{event.title}}</td>
+                <td name="description">{{event.description}}</td>
+                <td name="place">{{event.place}}</td>
+                <td name="startdate">{{event.startdate | date:'yyyy-MM-dd'}}</td>
+                <td name="finishdate">{{event.finishdate | date:'yyyy-MM-dd'}}</td>
+                <td name="status">{{event.status}}</td>
                 <td>
                     <button type="button" class="btn btn-default" ng-click="editEvent(event)">
                         <span class="glyphicon glyphicon-edit"></span> Edit
@@ -39,7 +39,7 @@
                 </td>
             </script>
             <script type="text/ng-template" id="edit">
-                <td><input type="text" ng-model=event.title class="form-control input-sm"></input></td>
+                <td name="title"><input type="text" ng-model=event.title class="form-control input-sm"></input></td>
                 <td><input type="text" ng-model=event.description class="form-control input-sm"></input></td>
                 <td><input type="text" ng-model=event.place class="form-control input-sm"></input></td>
                 <td><input type="text" ng-model=event.startdate class="form-control input-sm"></input></td>
